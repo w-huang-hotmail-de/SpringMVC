@@ -12,7 +12,7 @@
 	<!-- or it is also said that configure view resolver -->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/view/"></property>
-		<property name="suffix" value=".jsp"></property>
+		<property name="suffix" value=".jsp"></property>	<!-- The suffix cannot be here set as ".html", otherweise can cause error 404. -->
 	</bean>
 
 </beans>
