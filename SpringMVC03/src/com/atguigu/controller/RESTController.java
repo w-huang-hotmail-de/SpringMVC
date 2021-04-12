@@ -22,15 +22,21 @@ public class RESTController {
 	}
 	
 	@RequestMapping(value="testREST", method=RequestMethod.PUT)
-	public String updateUser() {
-		System.out.println("PUT");
-		return "success";	//Here will result in Error 405 - Method Not Allowed, because since JSP 2.3 (Tomcat 8) only the request method GET, POST and HEAD are supported.
+	public String updateUser(String _method) {	//Make the method parameter having same name as element in form, then he can take his value.
+		System.out.println("the real request method: " + _method);
+		return "success";	//Under Tomcat 8, here will result in Error 405 - Method Not Allowed, because since JSP 2.3 (Tomcat 8) only the request method GET, POST and HEAD are supported.
 	}
 	
-//	@RequestMapping(value="testREST", method=RequestMethod.PUT)
-//	public String updateUser(@PathVariable(name="_method")String method) {	//You cannot get the value of the element _method with @PathVariable, because the element _method is transferred via form, not URI. 
-//		System.out.println("the Method from parameter _method: " + method);
-//		return "success";
-//	}
+	@RequestMapping(value="testREST/{id}", method=RequestMethod.DELETE)
+	public String deleteUser(String _method, @PathVariable(name="id", required=false)Integer id) {
+		System.out.println("the real request method: " + _method);
+		System.out.println("the being deleted User has ID: " + id);
+		return "success";
+	}
+	
+	@RequestMapping(value="testAjax_DELETE", method=RequestMethod.DELETE)
+	public void testAjax(Integer id) {	//For Ajax it must be returned void, because Ajax's purpose is to achieve data interaction between client and server without page jump.
+		System.out.println("testAjax_DELETE, id = " + id);
+	}
 
 }
