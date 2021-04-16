@@ -14,6 +14,8 @@
 	 the mapping method in controller, of cause no mapping method can be found. 
 	 How to solve this problem I don't know yet. The teacher said we will deal with it later.-->
 <script type="text/javascript" src="js/jquery-1.11.3-min.js"></script>	
+<!-- I try with jsp:include to load jquery-1.11.3-min.js as static resource. That does not work. -->
+<%-- <jsp:include page="js/jquery-1.11.3-min.js"></jsp:include> --%>
 
 <script type="text/javascript">	//java script can be written anywhere in the file
 	function test(){

@@ -23,6 +23,5 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-expression-5.2.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-web-5.2.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-webmvc-5.2.5.RELEASE.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-webmvc-5.2.5.RELEASE-sources.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
