@@ -8,8 +8,11 @@
 </head>
 <body>
 成功！<br><br>
-Get attribute by ModelAndView concept: ${requestScope.user}<br><br>
+Get attribute with ModelAndView: ${requestScope.user}<br><br>
+Get attribute with java.util.Map: ${requestScope.user} | <% out.println(request.getAttribute("user")); %>
 
+
+<br>
 <p>-------------Try the four scopes predefined in EL----------------------------------------------</p>
 <%! int speed = 100; %>	<!-- speed is not an attribute in pageScope. It cannot be caught with El. -->
 <% 

@@ -57,7 +57,17 @@
 	</form>
 	<br><br>
 	
-	<a href="ParamController/testModelAndView">test ModelAndView</a>
+	<a href="ParamController/testDataTransferWithHttpServletRequest">test DataTransfer in SpringMVC with HttpServletRequest</a>
+	<br><br>
+	
+	<a href="ParamController/testDataTransferWithModelAndView">test DataTransfer in SpringMVC with ModelAndView</a>
+	<br><br>
+	
+	<a href="ParamController/testDataTransferWithMap">test DataTransfer in SpringMVC with java.util.Map</a>
+	<br><br>
+	
+	<a href="ParamController/testDataTransferWithModel">test DataTranser in SpringMVC with org.springframework.ui.Model</a>
+	
 	
 </body>
 </html>
