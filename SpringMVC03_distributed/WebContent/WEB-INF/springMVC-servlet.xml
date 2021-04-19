@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+		
+	<!-- find the class which actually play as controller -->
+	<context:component-scan base-package="com.atguigu.controller"></context:component-scan>
+	
+	<!-- define prefix and suffix for the result of requestMapping-methods in controller -->
+	<!-- or it is also said that configure view resolver -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/view/"></property>
+		<property name="suffix" value=".jsp"></property>	<!-- The suffix cannot be here set as ".html", otherweise can cause error 404. -->
+	</bean>
+
+</beans>
