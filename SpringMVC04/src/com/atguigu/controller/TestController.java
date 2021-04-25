@@ -12,8 +12,8 @@ public class TestController {
 	@RequestMapping(value="test/{id}", method=RequestMethod.GET)
 	public String test(@PathVariable(name="id")int id) {
 		System.out.println("the id sent by request address: " + id);
-		return "success";								//Succeeded, this is forward by default, not redirect.
-//		return "redirect:/SpringMVC04/newIndex.jsp";	//Succeeded to get the jump page Http://localhost:8080/SpringMVC04/newIndex.jsp.
+//		return "success";								//Succeeded, this is forward by default, not redirect.
+		return "redirect:/SpringMVC04/newIndex.jsp";	//Succeeded to get the jump page Http://localhost:8080/SpringMVC04/newIndex.jsp.
 //		return "redirect:../../newIndex.jsp";			//Succeeded to get the jump page Http://localhost:8080/SpringMVC04/newIndex.jsp.
 //		return "redirect:/newIndex.jsp";				//Succeeded to get the jump page Http://localhost:8080/SpringMVC04/newIndex.jsp.
 		
