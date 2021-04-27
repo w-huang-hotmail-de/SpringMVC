@@ -7,6 +7,14 @@
 <title>index</title>
 </head>
 <body>
-<a href="TestController/test/1001">testControoler/test/1001</a>
+<a href="TestController/test/一">testControoler/test/一</a>
+<br><br>
+
+<form action="TestController/test2" method="post">
+<!-- 	<label id="id">id:</label> -->
+	<input type="text" name="username"/>
+	<input type="submit" value="submit" />
+</form>
+
 </body>
 </html>
