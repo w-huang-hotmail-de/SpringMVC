@@ -1,12 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
-  <display-name>HRManagement</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://java.sun.com/xml/ns/javaee" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+id="WebApp_ID" version="2.5">
+  
+<display-name>HRManagement</display-name>
+<welcome-file-list>
+	<welcome-file>index.jsp</welcome-file>
+</welcome-file-list>
+  
+<!-- Three elements should be configured: CharacterEncodingFilter, HiddenHttpMethodFilter and DispatcherServelet. -->
+
+<!-- This filter can solve the garble problem of non-letter text or of the special letter.
+	 It must be at the first place before all the other filters. 
+	 All the requests must be processed by this filter. -->
+<filter>
+	<filter-name>charEncodingFilter</filter-name>
+	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+	<init-param>
+		<param-name>encoding</param-name>
+		<param-value>UTF-8</param-value>
+	</init-param>
+	<init-param>
+		<param-name>forceRequestEncoding</param-name>
+		<param-value>true</param-value>
+	</init-param>
+	<init-param>
+		<param-name>forceResponseEncoding</param-name>
+		<param-value>true</param-value>
+	</init-param>
+</filter>
+<filter-mapping>
+	<filter-name>charEncodingFilter</filter-name>
+	<url-pattern>/*</url-pattern>
+</filter-mapping>
+
+
+<!-- This filter determines the correct request method base on the value of request parameter named "_method" 
+	 All the request must be processed by this filter. -->
+<filter>
+	<filter-name>hiddenHttpMethodFilter</filter-name>
+	<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+</filter>
+<filter-mapping>
+	<filter-name>hiddenHttpMethodFilter</filter-name>
+	<url-pattern>/*</url-pattern>
+</filter-mapping>
+
+
+<!-- Configure the core controller named "hrManagement", he has Type DispatcherServlet
+	 Only the RESTful request is processed, for example http://localhost:8080/hrManagement/1001;
+	 the other normal request is not processed, for example http://localhost:8080/hrManagement/xxx.jsp. -->
+<servlet>
+	<servlet-name>hrManagement</servlet-name>
+	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	<init-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:hrManagement.xml</param-value>
+	</init-param>
+	<load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+	<servlet-name>hrManagement</servlet-name>
+	<url-pattern>/</url-pattern>
+</servlet-mapping>
+  
 </web-app>
