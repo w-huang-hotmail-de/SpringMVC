@@ -29,9 +29,9 @@ public class HRController {
 	 */
 	@RequestMapping(value="/emps", method=RequestMethod.GET)
 	public String getAllEmployee(Map<String, Object> map) {
-		Collection<Employee> emps = empDao.getAll();
-		map.put("employees", emps);
-		return "allEmployees";
+		Collection<Employee> emps = empDao.getAll();	//get the information of all employees and save it into a Collection object
+		map.put("allEmployees", emps);	//create an element named "allEmployees" in request scope, his value is the collection of all employees 
+		return "allEmployees";	//return the viewname to viewResolver to determine the jump page
 	}
 	
 	/**

@@ -5,10 +5,13 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Display the information of all the employees</title>
+<title>Display all the employees</title>
+<link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/list.css">
 </head>
 
 <body>
+<div class="center">
+<h1 align="center">All employees</h1>
 	<table>
 		<tr>
 			<th>ID</th>
@@ -19,7 +22,7 @@
 			<th>Department</th>
 			<th>Options</th>
 		</tr>
-		<c:forEach items="${employees}" var="emp">
+		<c:forEach items="${allEmployees}" var="emp">
 		<tr>
 			<td>${emp.id}</td>
 			<td>${emp.firstName}</td>
@@ -34,6 +37,7 @@
 		</tr>
 		</c:forEach>
 	</table>
+</div>
 </body>
 
 </html>
