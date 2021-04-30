@@ -20,7 +20,7 @@
 			<th>Email</th>
 			<th>Gender</th>
 			<th>Department</th>
-			<th>Options</th>
+			<th>Options<a href="emp">(add)</a></th>
 		</tr>
 		<c:forEach items="${allEmployees}" var="emp">
 		<tr>

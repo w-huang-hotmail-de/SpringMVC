@@ -23,6 +23,7 @@ public class HRController {
 	@Autowired
 	private EmployeeDaoSimulation empDao;
 	
+	
 	/**
 	 * To get all the employees.
 	 * It maps the request "http://localhost:8080/HRManagement/HRController/emps".
@@ -34,13 +35,14 @@ public class HRController {
 		return "allEmployees";	//return the viewname to viewResolver to determine the jump page
 	}
 	
+	
 	/**
-	 * To add a new employee with request method GET.
+	 * To add a new employee.
 	 * It maps the request "http://localhost:8080/HRManagement/HRController/emp"
 	 */
 	@RequestMapping(value="/emp", method=RequestMethod.GET)
-	public String addEmployeeWithGET(Employee newEmp) {
-		return "succeeded";
+	public String addEmployee() {	
+		return "add";	//return the viewname "add" to the viewResolver to determine the jump page adding new employee
 	}
 	
 	/**

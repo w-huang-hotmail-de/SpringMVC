@@ -9,20 +9,10 @@
 
 <body>
 <a href="HRController/emps">Get all the employees.</a>
-<br><br>
+<br/><br/>
 
-<p>Add a new employee with request method GET</p>
-<form action="HRController/" method="GET">
-<label id="id">id:</label>
-<input type="text" name="id" />
-<br>
-<label id="firstName">first name:</label>
-<input type="text" name="firstName" />
-<br>
-<label id="lastName">last name:</label>
-<input type="text" name="lastName" />
-<br>
-</form>
+<a href="HRController/emp">add employee</a>
+<br/><br/>
 
 </body>
 
