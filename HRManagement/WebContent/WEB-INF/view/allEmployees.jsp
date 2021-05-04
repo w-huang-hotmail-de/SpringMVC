@@ -23,18 +23,18 @@
 			<th>Options<a href="emp">(add)</a></th>
 		</tr>
 		<c:forEach items="${allEmployees}" var="emp">
-		<tr>
-			<td>${emp.id}</td>
-			<td>${emp.firstName}</td>
-			<td>${emp.lastName}</td>
-			<td>${emp.email}</td>
-			<td>${emp.gender}</td>
-			<td>${emp.department.departName}</td>
-			<td>
-				<a href="HRController/emp">Update</a>
-				<a href="HRController/emp">Delete</a>
-			</td>
-		</tr>
+			<tr>
+				<td>${emp.id}</td>
+				<td>${emp.firstName}</td>
+				<td>${emp.lastName}</td>
+				<td>${emp.email}</td>
+				<td>${emp.gender}</td>
+				<td>${emp.department.departName}</td>
+				<td>
+					<a href="HRController/emp">Update</a>
+					<a href="HRController/emp">Delete</a>
+				</td>
+			</tr>
 		</c:forEach>
 	</table>
 </div>

@@ -4,9 +4,11 @@ import java.util.function.Predicate;
 
 public class MainClass {
 	public static void main(String[] args) {
-		System.out.println(getPredicateResult((String str) -> str.length()>10));
-		System.out.println(getPredicateResultAnd(i -> i>=0));
-		System.out.println("Hallo?");
+		Employee emp = new Employee(null,null);
+		System.out.println(emp);
+//		System.out.println(getPredicateResult((String str) -> str.length()>10));
+//		System.out.println(getPredicateResultAnd(i -> i>=0));
+//		System.out.println("Hallo?");
 	}
 	
 	public static boolean getPredicateResult(Predicate<String> p) {

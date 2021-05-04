@@ -351,7 +351,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_7jVLQHEpEeuj0Mk_sVxVWg" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_7jb48HEpEeuj0Mk_sVxVWg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_7LZzqHEpEeuj0Mk_sVxVWg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_y6miMKyCEeu0Jd4ZCnRarg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_7LZzqHEpEeuj0Mk_sVxVWg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_7jVLQXEpEeuj0Mk_sVxVWg" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -379,7 +379,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_7jVyVHEpEeuj0Mk_sVxVWg" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_7jduIHEpEeuj0Mk_sVxVWg" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_7LZMe3EpEeuj0Mk_sVxVWg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_y6miPayCEeu0Jd4ZCnRarg" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_7LZMe3EpEeuj0Mk_sVxVWg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_7jWZYHEpEeuj0Mk_sVxVWg" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -931,6 +931,19 @@
   <bindingTables xmi:id="_7vDTFXEpEeuj0Mk_sVxVWg" bindingContext="_7vDTFHEpEeuj0Mk_sVxVWg"/>
   <bindingTables xmi:id="_7vDTF3EpEeuj0Mk_sVxVWg" bindingContext="_7vDTFnEpEeuj0Mk_sVxVWg"/>
   <bindingTables xmi:id="_7vD6IXEpEeuj0Mk_sVxVWg" bindingContext="_7vD6IHEpEeuj0Mk_sVxVWg"/>
+  <bindingTables xmi:id="_yI0f8KyCEeu0Jd4ZCnRarg" elementId="org.eclipse.texlipse.texEditorScope" bindingContext="_yIE5I6yCEeu0Jd4ZCnRarg">
+    <bindings xmi:id="_yI0f8ayCEeu0Jd4ZCnRarg" keySequence="CTRL+SHIFT+P" command="_yIE5HayCEeu0Jd4ZCnRarg"/>
+    <bindings xmi:id="_yI0f8qyCEeu0Jd4ZCnRarg" keySequence="CTRL+4" command="_yIE5EqyCEeu0Jd4ZCnRarg"/>
+    <bindings xmi:id="_yI0f86yCEeu0Jd4ZCnRarg" keySequence="CTRL+5" command="_yIE5G6yCEeu0Jd4ZCnRarg"/>
+    <bindings xmi:id="_yI9p4KyCEeu0Jd4ZCnRarg" keySequence="CTRL+SHIFT+6" command="_yIE5F6yCEeu0Jd4ZCnRarg"/>
+    <bindings xmi:id="_yI9p4ayCEeu0Jd4ZCnRarg" keySequence="CTRL+SHIFT+7" command="_yIE5FayCEeu0Jd4ZCnRarg"/>
+    <bindings xmi:id="_yI9p4qyCEeu0Jd4ZCnRarg" keySequence="CTRL+I" command="_yIE5E6yCEeu0Jd4ZCnRarg"/>
+    <bindings xmi:id="_yI9p46yCEeu0Jd4ZCnRarg" keySequence="ESC Q" command="_yIE5FKyCEeu0Jd4ZCnRarg"/>
+    <bindings xmi:id="_yI9p5KyCEeu0Jd4ZCnRarg" keySequence="F3" command="_yIE5IKyCEeu0Jd4ZCnRarg"/>
+    <bindings xmi:id="_yI9p5ayCEeu0Jd4ZCnRarg" keySequence="ESC CTRL+5" command="_yIE5H6yCEeu0Jd4ZCnRarg"/>
+    <bindings xmi:id="_yI9p5qyCEeu0Jd4ZCnRarg" keySequence="ALT+X" command="_yIE5GayCEeu0Jd4ZCnRarg"/>
+    <bindings xmi:id="_yI9p56yCEeu0Jd4ZCnRarg" keySequence="ALT+C" command="_yIE5HKyCEeu0Jd4ZCnRarg"/>
+  </bindingTables>
   <rootContext xmi:id="_7Kl7InEpEeuj0Mk_sVxVWg" elementId="org.eclipse.ui.contexts.dialogAndWindow" contributorURI="platform:/plugin/org.eclipse.platform" name="In Dialogs and Windows" description="Either a dialog or a window is open">
     <children xmi:id="_7Kl7I3EpEeuj0Mk_sVxVWg" elementId="org.eclipse.ui.contexts.window" contributorURI="platform:/plugin/org.eclipse.platform" name="In Windows" description="A window is open">
       <children xmi:id="_7Kl7JHEpEeuj0Mk_sVxVWg" elementId="org.eclipse.e4.ui.contexts.views" contributorURI="platform:/plugin/org.eclipse.platform" name="%bindingcontext.name.bindingView"/>
@@ -969,6 +982,7 @@
         <children xmi:id="_7Lf6KXEpEeuj0Mk_sVxVWg" elementId="org.dadacoalition.yedit.yeditScope" name="YEdit editor context"/>
         <children xmi:id="_7Lf6LHEpEeuj0Mk_sVxVWg" elementId="org.eclipse.jdt.ui.propertiesEditorScope" name="Editing Properties Files" description="Editing Properties Files Context"/>
         <children xmi:id="_7Lf6L3EpEeuj0Mk_sVxVWg" elementId="org.eclipse.jst.jsf.facesconfig.editorContext" name="In Faces Config Editor" description="Key binding context when using the Faces Config Editor"/>
+        <children xmi:id="_yIE5I6yCEeu0Jd4ZCnRarg" elementId="org.eclipse.texlipse.texEditorScope" name="Editing Latex Source"/>
       </children>
       <children xmi:id="_7LcPtXEpEeuj0Mk_sVxVWg" elementId="org.eclipse.compare.compareEditorScope" name="Comparing in an Editor" description="Comparing in an Editor"/>
       <children xmi:id="_7LcPt3EpEeuj0Mk_sVxVWg" elementId="org.eclipse.debug.ui.memoryview" name="In Memory View" description="In memory view"/>
@@ -1485,6 +1499,18 @@
     <persistedState key="originalCompatibilityViewBundle" value="org.springframework.tooling.ls.eclipse.gotosymbol"/>
     <tags>View</tags>
     <tags>categoryTag:Other</tags>
+  </descriptors>
+  <descriptors xmi:id="_y5HUcKyCEeu0Jd4ZCnRarg" elementId="org.eclipse.texlipse.TableView" label="LaTeX Table View" iconURI="platform:/plugin/org.eclipse.texlipse/icons/tableview.gif" tooltip="" category="TeXlipse" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.texlipse.tableview.views.TexTableView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.texlipse"/>
+    <tags>View</tags>
+    <tags>categoryTag:TeXlipse</tags>
+  </descriptors>
+  <descriptors xmi:id="_y5HUcayCEeu0Jd4ZCnRarg" elementId="org.eclipse.texlipse.FullOutline" label="Full Latex Outline" iconURI="platform:/plugin/org.eclipse.texlipse/icons/outline_co.gif" tooltip="" category="TeXlipse" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.texlipse.treeview.views.TexOutlineTreeView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.texlipse"/>
+    <tags>View</tags>
+    <tags>categoryTag:TeXlipse</tags>
   </descriptors>
   <trimContributions xmi:id="_2r10UF9tEeO-yojH_y4TJA" elementId="org.eclipse.ui.ide.application.trimcontribution.QuickAccess" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" toBeRendered="false" parentId="org.eclipse.ui.main.toolbar" positionInParent="last">
     <children xsi:type="menu:ToolControl" xmi:id="_76uUAF9tEeO-yojH_y4TJA" elementId="Spacer Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
@@ -2617,6 +2643,25 @@
   <commands xmi:id="_7fyIAnEpEeuj0Mk_sVxVWg" elementId="AUTOGEN:::variableViewActions/org.eclipse.wst.jsdt.debug.ui.variableview.show.functions" commandName="Show function variables" description="Show or hide function variables" category="_7LONR3EpEeuj0Mk_sVxVWg"/>
   <commands xmi:id="_7fyIA3EpEeuj0Mk_sVxVWg" elementId="AUTOGEN:::variableViewActions/org.eclipse.wst.jsdt.debug.ui.variableview.show.this" commandName="Show 'this' variable" description="Show or hide the this variable" category="_7LONR3EpEeuj0Mk_sVxVWg"/>
   <commands xmi:id="_7fyIBHEpEeuj0Mk_sVxVWg" elementId="AUTOGEN:::variableViewActions/org.eclipse.wst.jsdt.debug.ui.variableview.show.prototypes" commandName="Show proto variables" description="Show or hide proto variables" category="_7LONR3EpEeuj0Mk_sVxVWg"/>
+  <commands xmi:id="_yIE5EqyCEeu0Jd4ZCnRarg" elementId="org.eclipse.texlipse.commands.preview" commandName="Preview document" category="_yIE5EayCEeu0Jd4ZCnRarg"/>
+  <commands xmi:id="_yIE5E6yCEeu0Jd4ZCnRarg" elementId="org.eclipse.texlipse.commands.texCorrectIndentation" commandName="Correct Indentation" category="_yIE5EayCEeu0Jd4ZCnRarg"/>
+  <commands xmi:id="_yIE5FKyCEeu0Jd4ZCnRarg" elementId="org.eclipse.texlipse.commands.texHardLineWrap" commandName="Correct Line Wrap" category="_yIE5EayCEeu0Jd4ZCnRarg"/>
+  <commands xmi:id="_yIE5FayCEeu0Jd4ZCnRarg" elementId="org.eclipse.texlipse.commands.spellUncheck" commandName="Clear Spelling Errors" category="_yIE5EayCEeu0Jd4ZCnRarg"/>
+  <commands xmi:id="_yIE5FqyCEeu0Jd4ZCnRarg" elementId="org.eclipse.texlipse.commands.saveAsTemplate" commandName="Save As Template" category="_yIE5EayCEeu0Jd4ZCnRarg"/>
+  <commands xmi:id="_yIE5F6yCEeu0Jd4ZCnRarg" elementId="org.eclipse.texlipse.commands.spellCheck" commandName="Check Spelling" category="_yIE5EayCEeu0Jd4ZCnRarg"/>
+  <commands xmi:id="_yIE5GKyCEeu0Jd4ZCnRarg" elementId="org.eclipse.texlipse.commands.wordCount" commandName="Word Count" category="_yIE5EayCEeu0Jd4ZCnRarg"/>
+  <commands xmi:id="_yIE5GayCEeu0Jd4ZCnRarg" elementId="org.eclipse.texlipse.commands.texUncollapse" commandName="Uncollapse foldings" category="_yIE5EayCEeu0Jd4ZCnRarg"/>
+  <commands xmi:id="_yIE5GqyCEeu0Jd4ZCnRarg" elementId="com.vmware.server.tc.ui.command.browseDeploymentLocation" commandName="Browse Deployment Location..." category="_7LONR3EpEeuj0Mk_sVxVWg"/>
+  <commands xmi:id="_yIE5G6yCEeu0Jd4ZCnRarg" elementId="org.eclipse.texlipse.commands.texComment" commandName="Comment" category="_yIE5EayCEeu0Jd4ZCnRarg"/>
+  <commands xmi:id="_yIE5HKyCEeu0Jd4ZCnRarg" elementId="org.eclipse.texlipse.commands.texCollapse" commandName="Collapse foldings" category="_yIE5EayCEeu0Jd4ZCnRarg"/>
+  <commands xmi:id="_yIE5HayCEeu0Jd4ZCnRarg" elementId="org.eclipse.texlipse.commands.GotoMatchingBracket" commandName="Go to matching bracket" category="_yIE5EayCEeu0Jd4ZCnRarg"/>
+  <commands xmi:id="_yIE5HqyCEeu0Jd4ZCnRarg" elementId="org.eclipse.texlipse.commands.setAsMainFile" commandName="Set As Main File" category="_yIE5EayCEeu0Jd4ZCnRarg"/>
+  <commands xmi:id="_yIE5H6yCEeu0Jd4ZCnRarg" elementId="org.eclipse.texlipse.commands.texUncomment" commandName="Uncomment" category="_yIE5EayCEeu0Jd4ZCnRarg"/>
+  <commands xmi:id="_yIE5IKyCEeu0Jd4ZCnRarg" elementId="org.eclipse.texlipse.commands.openDeclaration" commandName="Open Declaration" category="_yIE5EayCEeu0Jd4ZCnRarg"/>
+  <commands xmi:id="_yIE5IayCEeu0Jd4ZCnRarg" elementId="org.eclipse.texlipse.commands.partialBuild" commandName="Partial Build" category="_yIE5EayCEeu0Jd4ZCnRarg"/>
+  <commands xmi:id="_yIE5IqyCEeu0Jd4ZCnRarg" elementId="org.eclipse.texlipse.commands.texWordWrap" commandName="Wrap text" category="_yIE5EayCEeu0Jd4ZCnRarg"/>
+  <commands xmi:id="_y37BoKyCEeu0Jd4ZCnRarg" elementId="AUTOGEN:::org.eclipse.texlipse.editor.editorContribution/org.eclipse.texlipse.action1" commandName="Run BibTeX on next build" category="_7LONR3EpEeuj0Mk_sVxVWg"/>
+  <commands xmi:id="_y37BoayCEeu0Jd4ZCnRarg" elementId="AUTOGEN:::org.eclipse.texlipse.editor.editorContribution/org.eclipse.texlipse.actions.ForceRebuild" commandName="Force build" category="_7LONR3EpEeuj0Mk_sVxVWg"/>
   <addons xmi:id="_7Kl7JnEpEeuj0Mk_sVxVWg" elementId="org.eclipse.e4.core.commands.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_7Kl7J3EpEeuj0Mk_sVxVWg" elementId="org.eclipse.e4.ui.contexts.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_7Kl7KHEpEeuj0Mk_sVxVWg" elementId="org.eclipse.e4.ui.bindings.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
@@ -2628,7 +2673,7 @@
   <addons xmi:id="_7Kl7LnEpEeuj0Mk_sVxVWg" elementId="MinMax Addon" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon"/>
   <addons xmi:id="_7Kl7L3EpEeuj0Mk_sVxVWg" elementId="org.eclipse.ui.workbench.addon.0" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_7KyIYHEpEeuj0Mk_sVxVWg" elementId="SplitterAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.splitteraddon.SplitterAddon"/>
-  <addons xmi:id="_IYS0IKimEeS11vbz3f9ezw" elementId="org.eclipse.ui.ide.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
+  <addons xmi:id="_yKdesKyCEeu0Jd4ZCnRarg" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
   <addons xmi:id="_dz0JgGOlEeSMMaPQU2nlzw" elementId="org.eclipse.ui.ide.application.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.ide.application/org.eclipse.ui.internal.ide.application.addons.ModelCleanupAddon"/>
   <categories xmi:id="_7LNmMHEpEeuj0Mk_sVxVWg" elementId="org.eclipse.team.ui.category.team" name="Team" description="Actions that apply when working with a Team"/>
   <categories xmi:id="_7LNmMXEpEeuj0Mk_sVxVWg" elementId="org.eclipse.ui.category.views" name="Views" description="Commands for opening views"/>
@@ -2670,4 +2715,5 @@
   <categories xmi:id="_7LONRnEpEeuj0Mk_sVxVWg" elementId="org.eclipse.pde.ui.category.source" name="Manifest Editor Source" description="PDE Source Page actions"/>
   <categories xmi:id="_7LONR3EpEeuj0Mk_sVxVWg" elementId="org.eclipse.core.commands.categories.autogenerated" name="Uncategorized" description="Commands that were either auto-generated or have no category"/>
   <categories xmi:id="_7LONSHEpEeuj0Mk_sVxVWg" elementId="org.eclipse.wst.jsdt.ui.category.refactoring" name="Refactor - JavaScript" description="JavaScript Refactoring Actions"/>
+  <categories xmi:id="_yIE5EayCEeu0Jd4ZCnRarg" elementId="org.eclipse.texlipse.latexEditingCategory" name="Texlipse" description="Latex Editing"/>
 </application:Application>

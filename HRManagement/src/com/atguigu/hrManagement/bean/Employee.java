@@ -4,14 +4,14 @@ package com.atguigu.hrManagement.bean;
  * To hold the information of an employee
  */
 public class Employee {
-	private int id;
+	private Integer id;
 	private String firstName;
 	private String lastName;
 	private String email;
 	private String gender;
 	private Department department;
 	
-	public Employee(int id, String firstName, String lastName, String email, String gender, Department department) {
+	public Employee(Integer id, String firstName, String lastName, String email, String gender, Department department) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -20,11 +20,11 @@ public class Employee {
 		this.department = department;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

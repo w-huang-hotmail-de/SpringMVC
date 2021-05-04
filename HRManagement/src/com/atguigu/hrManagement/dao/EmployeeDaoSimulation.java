@@ -23,6 +23,8 @@ public class EmployeeDaoSimulation {
 		emps.put(1005, new Employee(1005, "Martha", "Albers", "m.albers@hotmail.de", "female", new Department(101, "Administration")));
 	}
 	
+	private static Integer idOfNewEmp = 1006;	//Store id of the next new employee
+	
 	/**
 	 * Get the information of all the employees
 	 * @return Collection<Employee>
@@ -31,4 +33,19 @@ public class EmployeeDaoSimulation {
 		return emps.values();
 	}
 	
+	/**
+	 * Save the new employee into HashMap emps
+	 */
+	public void save(Employee newEmp){	
+		newEmp.setId(idOfNewEmp);	//the new employee id sent by the browser has been null until this statement is executed
+		idOfNewEmp++;	//update idOfNewEmp for the next new employee
+		newEmp.setDepartment(DepartmentDaoSimulation.getDepartment(newEmp.getDepartment().getId()));
+		emps.put(newEmp.getId(), newEmp);
+	}
+	
 }
+
+
+
+
+
