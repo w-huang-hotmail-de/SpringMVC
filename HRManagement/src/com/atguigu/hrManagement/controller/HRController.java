@@ -73,7 +73,7 @@ public class HRController {
 		Collection<Department> departs = departDao.getAll();	//get all the current departments
 		map.put("updatingEmp", updatingEmp);	//save the employee into request scope
 		map.put("departs", departs);	//save all the current departments into request scope
-		return "update";	//return viewname "update" with that the viewResolver determine the jump page
+		return "updateAlternative";	//return viewname "update" with that the viewResolver determine the jump page
 	}
 	
 	

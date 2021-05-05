@@ -57,7 +57,7 @@
 			</tr>
 			<tr >
 				<td colspan="2" align="center">
-					<input type="submit" value="update">
+					<input type="submit" value="Update">
 				</td>
 			</tr>
 		</table>
