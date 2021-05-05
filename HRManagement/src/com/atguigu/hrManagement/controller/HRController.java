@@ -59,7 +59,36 @@ public class HRController {
 		return "redirect:emps";
 	}
 	
-//	
+	
+	/**
+	 * To jump to the page updating an employee.
+	 * It maps  the request "http://localhost:8080/HRManagement/HRController/emp"
+	 * @param id - The id of employee that will be updated.
+	 * @param map -	Save data into request scope.
+	 * @return A String as viewname with that the viewResolver determine next jump page.
+	 */
+	@RequestMapping(value="/emp/{id}", method=RequestMethod.GET)
+	public String jumpToUpdateEmployee(@PathVariable(name="id")Integer id, Map<String, Object> map) {
+		Employee updatingEmp = empDao.getEmployee(id);	//get current information of the employee
+		Collection<Department> departs = departDao.getAll();	//get all the current departments
+		map.put("updatingEmp", updatingEmp);	//save the employee into request scope
+		map.put("departs", departs);	//save all the current departments into request scope
+		return "update";	//return viewname "update" with that the viewResolver determine the jump page
+	}
+	
+	
+	/**
+	 * To update an employee
+	 * @param emp - A POJO object to receive data sent by browser
+	 * @return A String as viewname with that the next jump page is determined.
+	 */
+	@RequestMapping(value="/emp", method=RequestMethod.PUT)
+	public String updateEmployee(Employee emp) {	
+		empDao.save(emp);	//update the employee
+		return "redirect:emps";
+	}
+	
+	
 //	/**
 //	 * To remove an employee.
 //	 * It maps the request "http://localhost:8080/HRManagement/HRController/emp/id".
@@ -68,15 +97,7 @@ public class HRController {
 //	public String deleteEmployee(@PathVariable(name="id")int id) {
 //		return "succeeded";
 //	}
-//	
-//	/**  
-//	 * To update the information of an employee.
-//	 * It maps  the request "http://localhost:8080/HRManagement/HRController/emp"
-//	 */
-//	@RequestMapping(value="/emp", method=RequestMethod.PUT)
-//	public String updateEmployee(Employee updateEmp) {
-//		return "allEmployees";
-//	}
+	
 }
 
 

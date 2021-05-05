@@ -31,8 +31,8 @@
 				<td>${emp.gender}</td>
 				<td>${emp.department.departName}</td>
 				<td>
-					<a href="HRController/emp">Update</a>
-					<a href="HRController/emp">Delete</a>
+					<a href="emp/${emp.id}">Update</a>
+					<a href="emp">Delete</a>
 				</td>
 			</tr>
 		</c:forEach>
