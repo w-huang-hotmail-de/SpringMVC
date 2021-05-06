@@ -56,6 +56,16 @@ public class EmployeeDaoSimulation {
 	public Employee getEmployee(Integer id) {
 		return emps.get(id);
 	}
+	
+	
+	/**
+	 * Remove an employee
+	 * @param id - the id of employee being removed
+	 */
+	public void delEmployee(Integer id) {
+		emps.remove(id);
+	}
+
 }
 
 

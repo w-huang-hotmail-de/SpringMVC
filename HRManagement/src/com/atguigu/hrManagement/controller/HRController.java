@@ -89,14 +89,15 @@ public class HRController {
 	}
 	
 	
-//	/**
-//	 * To remove an employee.
-//	 * It maps the request "http://localhost:8080/HRManagement/HRController/emp/id".
-//	 */
-//	@RequestMapping(value="/emp/{id}", method=RequestMethod.DELETE)
-//	public String deleteEmployee(@PathVariable(name="id")int id) {
-//		return "succeeded";
-//	}
+	/**
+	 * To remove an employee.
+	 * It maps the request "http://localhost:8080/HRManagement/HRController/emp/id".
+	 */
+	@RequestMapping(value="/emp/{id}", method=RequestMethod.DELETE)
+	public String deleteEmployee(@PathVariable(name="id")Integer id) {
+		empDao.delEmployee(id);
+		return "redirect:../emps";
+	}
 	
 }
 

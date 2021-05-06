@@ -7,6 +7,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Display all the employees</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/list.css">
+<script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-1.11.3-min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(".del").click(
+			function(){
+				if(confirm("Are you sure to delete the employee?")){
+					$("form").attr("action", $(this).attr("href")).submit();	//(this.href) is also okay, ($(this).attr("href")) is JQuery code, (this.href) is JS code.
+					return false;
+				}
+				return false;
+			}
+		);
+	});
+</script>
 </head>
 
 <body>
@@ -32,12 +46,22 @@
 				<td>${emp.department.departName}</td>
 				<td>
 					<a href="emp/${emp.id}">Update</a>
-					<a href="emp">Delete</a>
+					<a class="del" href="emp/${emp.id}">Delete</a>	<%-- This is a GET-request, it will be not handled by HiddenHttpMethodFilter and do not get the real request method DELETE. The method mapping DELETE cannot therefore be called. You should combine this GET-request with a form. --%>
 				</td>
 			</tr>
 		</c:forEach>
 	</table>
 </div>
+
+<form method="post">
+	<input type="hidden" name="_method" value="DELETE">
+</form>
+
 </body>
 
 </html>
+
+
+
+
+
