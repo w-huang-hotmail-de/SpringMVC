@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.atguigu.hrManagement.bean.Department;
 import com.atguigu.hrManagement.bean.Employee;
+import com.atguigu.hrManagement.dao.DepartmentDao;
 import com.atguigu.hrManagement.dao.DepartmentDaoSimulation;
 import com.atguigu.hrManagement.dao.EmployeeDaoSimulation;
 
@@ -19,7 +20,8 @@ import com.atguigu.hrManagement.dao.EmployeeDaoSimulation;
 public class HRController {
 	
 	@Autowired
-	private DepartmentDaoSimulation departDao;
+	private DepartmentDao departDao;
+//	private DepartmentDaoSimulation departDao;
 	
 	@Autowired
 	private EmployeeDaoSimulation empDao;
