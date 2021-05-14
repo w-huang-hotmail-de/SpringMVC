@@ -2,30 +2,41 @@ package com.atguigu.hrManagement.dao;
 
 import java.util.Collection;
 
-public interface Dao {
+public interface Dao<T> {
 	/**
-	 * Get all records in a database table
+	 * Get all records in a schema table
 	 * @return a collection containing the records
 	 */
-	public <E> Collection<E> getAll();
+	public Collection<T> getAll();
+	
 	
 	/**
-	 * Get the records that are eligible for the search condition
-	 * @param condition - search condition for searching in a database table
-	 * @return a collection containing the eligible records
+	 * Get a record that is eligible for the ID
+	 * @param id - ID number of record in schema table
+	 * @return the record encapsulated with an suitable object
 	 */
-	public Collection<Object> get(Object condition);
+	public T getById(Integer id);
+	
 	
 	/**
-	 * Insert a new record into a database table
-	 * @param record - new record that should be inserted into a database table
+	 * Get records that is eligible for name
+	 * @param name - the name of record in schema table
+	 * @return the records being suitable for name
 	 */
-	public void save(Object record);
+	public Collection<T> getByName(String name);
+	
 	
 	/**
-	 * Delete a record from a database table
-	 * @param condition - search condition for searching in a database table
+	 * Insert a new record into a schema table
+	 * @param t - new record that should be inserted into a schema table
 	 */
-	public void delete(Object condition);
+	public void save(T t);
+	
+	
+	/**
+	 * Delete a record from a schema table
+	 * @param t - a record to be deleted from a schema table
+	 */
+	public void delete(T t);
 	
 }
