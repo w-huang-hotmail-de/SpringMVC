@@ -1,5 +1,8 @@
 package com.atguigu.hrManagement.bean;
 
+/**
+ * Contain information of a department.
+ */
 public class Department {
 	
 	private Integer id;

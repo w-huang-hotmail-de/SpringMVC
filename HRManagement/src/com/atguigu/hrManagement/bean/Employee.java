@@ -1,7 +1,7 @@
 package com.atguigu.hrManagement.bean;
 
 /**
- * To hold the information of an employee
+ * Contain the information of an employee
  */
 public class Employee {
 	private Integer id;

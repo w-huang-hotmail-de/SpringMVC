@@ -12,48 +12,56 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.atguigu.hrManagement.bean.Department;
 import com.atguigu.hrManagement.bean.Employee;
 import com.atguigu.hrManagement.dao.DepartmentDao;
-import com.atguigu.hrManagement.dao.DepartmentDaoSimulation;
-import com.atguigu.hrManagement.dao.EmployeeDaoSimulation;
+import com.atguigu.hrManagement.dao.EmployeeDao;
 
+/**
+ * Controller of DespatcherServlet to process the request from client in according to @RequestMapping,
+ * which maps the annotated method to a request.
+ */
 @Controller
 @RequestMapping(value="/HRController")
 public class HRController {
 	
-	@Autowired
+	@Autowired	//automatically wire an Object of type DepartmentDao 
 	private DepartmentDao departDao;
-//	private DepartmentDaoSimulation departDao;
 	
-	@Autowired
-	private EmployeeDaoSimulation empDao;
+	@Autowired	//automatically wire an Object of type EmployeeDao 
+	private EmployeeDao empDao;
 	
 	
 	/**
-	 * To get all the employees.
-	 * It maps the request "http://localhost:8080/HRManagement/HRController/emps".
+	 * Get all the employees. 
+	 * Map the request http://localhost:8080/HRManagement/HRController/emps with request method GET.
+	 * @param map - attribute in request scope to transfer data between different pages under a same http-address (page Forward)
+	 * @return viewname being transfered to viewResolver to determine next page (page forward)
 	 */
 	@RequestMapping(value="/emps", method=RequestMethod.GET)
 	public String getAllEmployee(Map<String, Object> map) {
-		Collection<Employee> emps = empDao.getAll();	//get the information of all employees and save it into a Collection object
-		map.put("allEmployees", emps);	//create an element named "allEmployees" in request scope, his value is the collection of all employees 
-		return "allEmployees";	//return the viewname to viewResolver to determine the jump page
+		Collection<Employee> emps = empDao.getAll();	//get all employees 
+		map.put("allEmployees", emps);	 
+		return "allEmployees";	
 	}
 	
 	
 	/**
-	 * To jump to the page adding a new employee.
-	 * It maps the request "http://localhost:8080/HRManagement/HRController/emp"
+	 * Jump to the page adding new employee. 
+	 * Map the request http://localhost:8080/HRManagement/HRController/emp with request method GET.
+	 * @param map - attribute in request scope to transfer data between different pages under a same http-address (page Forward)
+	 * @return viewname being transfered to viewResolver to determine next page (page forward)
 	 */
 	@RequestMapping(value="/emp", method=RequestMethod.GET)
 	public String jumpToAddEmployee(Map<String, Object> map) {	
-		Collection<Department> departments = departDao.getAll();
+		Collection<Department> departments = departDao.getAll();	//get all departments
 		map.put("allDeparts", departments);
-		return "add";	//return the viewname "add" to the viewResolver to determine the jump page adding new employee
+		return "add";	
 	}
 	
 	
 	/**
-	 * To add a new employee.
-	 * It maps the request "http://localhost:8080/HRManagement/HRController/emp"
+	 * Add a new employee. 
+	 * Map the request http://localhost:8080/HRManagement/HRController/emp with request method POST.
+	 * @param newEmp - a POJO object of type Employee receiving the data from client
+	 * @return request address for redirecting page (page redirect)
 	 */
 	@RequestMapping(value="/emp", method=RequestMethod.POST)
 	public String addEmployee(Employee newEmp) {
@@ -63,41 +71,46 @@ public class HRController {
 	
 	
 	/**
-	 * To jump to the page updating an employee.
-	 * It maps  the request "http://localhost:8080/HRManagement/HRController/emp"
-	 * @param id - The id of employee that will be updated.
-	 * @param map -	Save data into request scope.
-	 * @return A String as viewname with that the viewResolver determine next jump page.
+	 * Jump to the page updating an employee. 
+	 * Map the request http://localhost:8080/HRManagement/HRController/emp/id with request method GET.
+	 * @param id - id of the employee being updated.
+	 * @param map - attribute in request scope to transfer data between different pages under a same http-address (page Forward)
+	 * @return viewname being transfered to viewResolver to determine next page (page forward)
 	 */
 	@RequestMapping(value="/emp/{id}", method=RequestMethod.GET)
 	public String jumpToUpdateEmployee(@PathVariable(name="id")Integer id, Map<String, Object> map) {
-		Employee updatingEmp = empDao.getEmployee(id);	//get current information of the employee
-		Collection<Department> departs = departDao.getAll();	//get all the current departments
-		map.put("updatingEmp", updatingEmp);	//save the employee into request scope
-		map.put("departs", departs);	//save all the current departments into request scope
-		return "updateAlternative";	//return viewname "update" with that the viewResolver determine the jump page
+		Employee updatingEmp = empDao.getById(id);	//get the employee being updated
+		Collection<Department> departs = departDao.getAll();	//get all departments
+		map.put("updatingEmp", updatingEmp);	//the key name "updatingEmp" is set in tab <form: modelAttribute> in updateAlternative.jsp, should not be changed
+		map.put("departs", departs);	
+		return "updateAlternative";	
 	}
 	
 	
 	/**
-	 * To update an employee
-	 * @param emp - A POJO object to receive data sent by browser
-	 * @return A String as viewname with that the next jump page is determined.
+	 * Update an employee. 
+	 * Map the request http://localhost:8080/HRManagement/HRController/emp with request method PUT.
+	 * @param emp - a POJO object of type Employee receiving the data from client
+	 * @return request address for redirecting page (page redirect)
 	 */
 	@RequestMapping(value="/emp", method=RequestMethod.PUT)
 	public String updateEmployee(Employee emp) {	
-		empDao.save(emp);	//update the employee
+		System.out.println("hier is updateEmployee");
+		empDao.update(emp);	//update the employee
 		return "redirect:emps";
 	}
 	
 	
 	/**
-	 * To remove an employee.
-	 * It maps the request "http://localhost:8080/HRManagement/HRController/emp/id".
+	 * Delete an employee. 
+	 * Map the request http://localhost:8080/HRManagement/HRController/emp/id with request method DELETE.
+	 * @param id - id of the employee being deleted
+	 * @return request address for redirecting page (page redirect)
 	 */
 	@RequestMapping(value="/emp/{id}", method=RequestMethod.DELETE)
 	public String deleteEmployee(@PathVariable(name="id")Integer id) {
-		empDao.delEmployee(id);
+		System.out.println("hier is deleteEmployee");
+		empDao.deleteById(id);
 		return "redirect:../emps";
 	}
 	

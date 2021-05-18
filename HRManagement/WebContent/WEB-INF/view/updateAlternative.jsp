@@ -4,10 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
-<%-- This file has the same function as update.jsp. In this file, the <form:> tag of SpringMVC framework is used, 
-  -- to realize the automatic echo of the current information of the being updated employee. 
-  --%>
-
+ <%-- The alternative page updating an employee. This page use <form:> tag of SpringMVC framework to automatically echo the being updated employee. --%>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Update an employee</title>
@@ -63,7 +60,6 @@
 				</td>
 			</tr>
 		</table>
-<%-- 	</form> --%>
 	</form:form>
 </div>
 </body>

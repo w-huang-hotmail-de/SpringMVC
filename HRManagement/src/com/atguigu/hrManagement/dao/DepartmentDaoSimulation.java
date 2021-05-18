@@ -8,6 +8,10 @@ import org.springframework.stereotype.Repository;
 
 import com.atguigu.hrManagement.bean.Department;
 
+
+/**
+ * Simulate the behavior of accessing the schema table department, actually no access to the database.
+ */
 @Repository
 public class DepartmentDaoSimulation {
 	

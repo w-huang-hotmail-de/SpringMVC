@@ -44,9 +44,9 @@
 					Gender
 				</td>
 				<td> 
-					<input type="radio" id="female" name="gender" value="0">
+					<input type="radio" id="female" name="gender" value="female">
 					<label for="female">female</label>
-					<input type="radio" id="male" name="gender" value="1">
+					<input type="radio" id="male" name="gender" value="male">
 					<label for="male">male</label>
 				</td>
 			</tr>

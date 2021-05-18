@@ -8,6 +8,10 @@ import org.springframework.stereotype.Repository;
 import com.atguigu.hrManagement.bean.Department;
 import com.atguigu.hrManagement.bean.Employee;
 
+
+/**
+ * Simulate the behavior of accessing the schema table employee, actually no access to the database.
+ */
 @Repository
 public class EmployeeDaoSimulation {
 	
@@ -53,7 +57,7 @@ public class EmployeeDaoSimulation {
 	 * @param id the id of employee
 	 * @return Employee an employee
 	 */
-	public Employee getEmployee(Integer id) {
+	public Employee getById(Integer id) {
 		return emps.get(id);
 	}
 	
@@ -62,7 +66,7 @@ public class EmployeeDaoSimulation {
 	 * Remove an employee
 	 * @param id - the id of employee being removed
 	 */
-	public void delEmployee(Integer id) {
+	public void deleteById(Integer id) {
 		emps.remove(id);
 	}
 

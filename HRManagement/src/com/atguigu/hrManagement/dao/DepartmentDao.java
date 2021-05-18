@@ -14,9 +14,21 @@ import org.springframework.stereotype.Repository;
 import com.atguigu.hrManagement.bean.Department;
 
 
+/**
+ * Define the behavior of accessing the schema table department
+ */
 @Repository
 public class DepartmentDao implements Dao<Department> {
-	private String url = "jdbc:mysql://localhost:3306/company?serverTimeZone=UTC";
+	
+	static {	// load and register mysql driver
+		try{ 
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+	}
+	
+	private String url = "jdbc:mysql://localhost:3306/company?serverTimezone=UTC";
 	private String user = "root";
 	private String password = "12345";
 	private String sql;	//query statement
@@ -32,10 +44,11 @@ public class DepartmentDao implements Dao<Department> {
 	public Collection<Department> getAll() {
 		sql = "SELECT * FROM department";
 		
-		try(Connection connec = DriverManager.getConnection(url);	//connection with a schema (database)
+		try(Connection connec = DriverManager.getConnection(url, user, password);	//connection with a schema (database)
 			Statement state = connec.createStatement();	//create query statement
 			ResultSet result = state.executeQuery(sql))	//result set containing the records retrieved from schema table
 		{
+			map.clear();
 			while(result.next()) {
 				int id = result.getInt("departmentId");
 				String name = result.getString("departmentName");
@@ -59,14 +72,14 @@ public class DepartmentDao implements Dao<Department> {
 	@Override
 	public Department getById(Integer id) {
 		Department depart = null;	
-		sql = "SELECT * FROM deparment WHERE departmentId=" + id;	//query statement
-		try(Connection connec = DriverManager.getConnection(url);
+		sql = "SELECT * FROM department WHERE departmentId=" + id;	//query statement
+		try(Connection connec = DriverManager.getConnection(url, user, password);
 			Statement state = connec.createStatement();
 			ResultSet result = state.executeQuery(sql))
 		{
 			depart = null;
 			if(result.next()) //nothing or only one record can be retrieved by id number 
-				depart = new Department(result.getInt("departmentId"), result.getString("departmentNamer"));
+				depart = new Department(result.getInt("departmentId"), result.getString("departmentName"));
 		}catch(SQLException ex) {
 			ex.printStackTrace();
 			throw new RuntimeException(ex);
@@ -84,7 +97,7 @@ public class DepartmentDao implements Dao<Department> {
 	public Collection<Department> getByName(String departName) {
 		sql = "SELECT * FROM department WHERE departmentName=" + departName;	//query statement
 		
-		try(Connection connec = DriverManager.getConnection(url);
+		try(Connection connec = DriverManager.getConnection(url, user, password);
 			Statement state = connec.createStatement();
 			ResultSet result = state.executeQuery(sql))
 		{
@@ -112,7 +125,7 @@ public class DepartmentDao implements Dao<Department> {
 		String name = depart.getDepartName();
 		sql = "INSERT INTO department (departmentName) VALUES (" + name + ")";
 		
-		try(Connection connec = DriverManager.getConnection(url);
+		try(Connection connec = DriverManager.getConnection(url, user, password);
 			Statement state = connec.createStatement())
 		{
 			int rowCount = state.executeUpdate(sql);	//row count being manipulated
@@ -127,14 +140,13 @@ public class DepartmentDao implements Dao<Department> {
 	
 	/**
 	 * Delete a record from a schema table
-	 * @param t - a record to be deleted from a schema table
+	 * @param id - ID of a record to be deleted from a schema table
 	 */
 	@Override
-	public void delete(Department depart) {
-		int id = depart.getId();
+	public void deleteById(Integer id) {
 		sql = "DELETE FROM department WHERE departmentId=" + id;
 		
-		try(Connection connec = DriverManager.getConnection(url);
+		try(Connection connec = DriverManager.getConnection(url, user, password);
 			Statement state = connec.createStatement())
 		{
 			int rowCount = state.executeUpdate(sql);	//row count being manipulated
@@ -144,6 +156,16 @@ public class DepartmentDao implements Dao<Department> {
 			ex.printStackTrace();
 			throw new RuntimeException(ex);
 		}
+	}
+
+
+	/**
+	 * Update a record in table department
+	 * @param depart - department containing new data
+	 */
+	@Override
+	public void update(Department depart) {
+	
 	}
 
 }

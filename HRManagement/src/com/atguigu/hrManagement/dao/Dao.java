@@ -2,7 +2,12 @@ package com.atguigu.hrManagement.dao;
 
 import java.util.Collection;
 
+/**
+ * Define the behavior of accessing mysql database
+ * @param <T> - POJO class to save the data retrieved from schema table, for example Department, Employee.
+ */
 public interface Dao<T> {
+	
 	/**
 	 * Get all records in a schema table
 	 * @return a collection containing the records
@@ -27,6 +32,13 @@ public interface Dao<T> {
 	
 	
 	/**
+	 * Update a record
+	 * @param t - object containing new data of the updated record
+	 */
+	public void update(T t);
+	
+	
+	/**
 	 * Insert a new record into a schema table
 	 * @param t - new record that should be inserted into a schema table
 	 */
@@ -35,8 +47,8 @@ public interface Dao<T> {
 	
 	/**
 	 * Delete a record from a schema table
-	 * @param t - a record to be deleted from a schema table
+	 * @param id - ID of a record to be deleted from a schema table
 	 */
-	public void delete(T t);
+	public void deleteById(Integer id);
 	
 }

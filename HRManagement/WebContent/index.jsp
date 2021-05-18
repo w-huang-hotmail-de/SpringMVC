@@ -5,15 +5,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>index</title>
+<link rel="stylesheet" type="text/css" href="./css/list.css">
 </head>
 
 <body>
-<a href="HRController/emps">Get all the employees.</a>
-<br/><br/>
+<div class="center">
 
-<a href="HRController/emp">add employee</a>
-<br/><br/>
+<h1>HR Management</h1>
+<br><br>
+<a href="HRController/emps" >Get all the employees.</a>
 
+</div>
 </body>
-
 </html>
