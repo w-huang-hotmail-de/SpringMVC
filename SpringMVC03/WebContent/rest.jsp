@@ -22,7 +22,8 @@
 		$.ajax({
 			url: "RESTController/testAjax_DELETE",	//URI
 			type: "DELETE",		//requests method
-			data: "id=1001",	//It canbe also {id:1001}
+			contentType: "application/json",
+			data: {"id":1001},	//send this string to server, it canbe also {id:1001} "id=1001"
 			datatype: "json",	//This is expected datatype of the data returned from server. Ajax receive the data always in expected datatype json, no matter what the server has sent. 
 			success: function(obj) {	//obj is the data returned from server
 				alert(obj);

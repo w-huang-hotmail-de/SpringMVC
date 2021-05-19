@@ -1,9 +1,11 @@
 package com.atguigu.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping(value="RESTController")
@@ -24,19 +26,33 @@ public class RESTController {
 	@RequestMapping(value="testREST", method=RequestMethod.PUT)
 	public String updateUser(String _method) {	//Make the method parameter having same name as element in form, then he can take his value.
 		System.out.println("the real request method: " + _method);
-		return "success";	//Under Tomcat 8, here will result in Error 405 - Method Not Allowed, because since JSP 2.3 (Tomcat 8) only the request method GET, POST and HEAD are supported.
+//		return "success";	//page-forward cannot be used here, because since Tomcat 8 (JSP 2.3) only support jsp-request with RequestMethod.GET or RequestMethod.POST
+		return "redirect:/RESTController/forPageForward";
 	}
 	
 	@RequestMapping(value="testREST/{id}", method=RequestMethod.DELETE)
 	public String deleteUser(String _method, @PathVariable(name="id", required=false)Integer id) {
 		System.out.println("the real request method: " + _method);
 		System.out.println("the being deleted User has ID: " + id);
-		return "success";
+//		return "success";	//page-forward cannot be used here, because since Tomcat 8 (JSP 2.3) only support jsp-request with RequestMethod.GET or RequestMethod.POST
+		return "redirect:/RESTController/forPageForward";
 	}
 	
-	@RequestMapping(value="testAjax_DELETE", method=RequestMethod.DELETE)
+	@RequestMapping(value="testAjax_DELETE")
+	@DeleteMapping
 	public void testAjax(Integer id) {	//For Ajax it must be returned void, because Ajax's purpose is to achieve data interaction between client and server without page jump.
 		System.out.println("testAjax_DELETE, id = " + id);
+	}
+	
+	/**
+	 * Do nothing, but only forward to the next page. 
+	 * Since Tomcat 8 (JSP 2.3) only suport jsp-request with RequestMethod.GET and RequestMethod.POST, therefore it cannot be 
+	 * successed to make page-forward from a request with PUT or DELETE Method. So at first redirect to here and then forward.
+	 * @return viewname for ViewResolver for page-forward.
+	 */
+	@RequestMapping(value="forPageForward")
+	public String forPageForward() {
+		return "success";
 	}
 
 }
