@@ -1,4 +1,4 @@
-package com.atguigu.test;
+package com.atguigu.controller;
 
 import java.util.Collection;
 
@@ -18,14 +18,15 @@ public class TestJsonController {
 	EmployeeDaoSimulation empDao;
 	
 	/**
-	 * 
-	 * @return
+	 * Transform a POJO to JSON data and send it back to client.
+	 * @param running - the variable having the same name as the parameter sent by client 
+	 * @return collection of employees as response body
 	 */
 	@RequestMapping(value="testJson")
-	@ResponseBody	//with this annotation the return value is not viewname for ViewResolver any more, but response body.
-	public Collection<Employee> testJson(String running) {
+	@ResponseBody	//set the return value as response body, not viewname any more
+	public Collection<Employee> testJson(String running) {	//receive data from client
 		System.out.println("running: " + running);
 		Collection<Employee> emps = empDao.getAll();
-		return emps;	//First copy jackson's jar files to project, activate the springmvc driver <mvc:annotation-driven/>, after that springmvc can automatically convert java object into json data.  
+		return emps;	//two requirements for automatic transformation from POJO to JSON: jackson's jar files, activate springmvc annotation driver using <mvc:annotation-driven/>  
 	}
 }

@@ -11,26 +11,26 @@
 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-1.11.3-min.js"></script>
 <script type="text/javascript">
 	$(
-		function(){	//pre-load function: at first to load all the html tags, then run this ajax code	
-			$("#btn_ajax").click(	//click event of html-tag identified with "btn_ajax"	
-				function(){	//function for click event
+		function(){	//pre-load function: first load all the html tags, then run this ajax code	
+			$("#btn_ajax").click(	//click event on html-tag identified with "btn_ajax"	
+				function(){			//function for click event
 					$.ajax(
 						{
 							url:"testJsonController/testJson",
 							type:"POST",
 							data: {running:"every day"},
-							dataType:"json",	//expected type of data sent back from server; data type to receive data no matter what is sent back from server
+							dataType:"json",	//expected datatype being sent back from server; also datatype receiving data no matter what is sent back from server
 							success:function(resp){
-								/* show received json in a table using javascript for-in */
+								/* show received json in a table using for-in */
 								var table = "<table>"
 								table += "<tr><th>id</th><th>first name</th><th>last name</th><th>email</th><th>gender</th><th>department</th></tr>";
 								for(var i in resp){
 									table += "<tr><td>"+resp[i].id+"</td><td>"+resp[i].firstName+"</td><td>"+resp[i].lastName+"</td><td>"+resp[i].email+"</td><td>"+resp[i].gender+"</td><td>"+resp[i].department.departName+"</td></tr>";
 								}
 								table += "</table>";
-								$(".center").append(table);	//get html-tag with class "center" and append the table into it	
+								$(".center").append(table);	//append the table to the html-tag with class "center"
 								
-								/* show received json with alert-windows */
+								/* Show received json with alert-windows. Alert always run first no matter where the code locates. */
 								for(var i in resp){
 									alert(resp[i].id + ", " + resp[i].firstName + ", " + resp[i].lastName + ", " + resp[i].email + ", " + resp[i].gender + ", " + resp[i].department.departName);
 								}
@@ -46,9 +46,9 @@
 
 <body>
 <div class="center">
-	<a href="testJsonController/testJson">test json</a>
+	<a href="testJsonController/testJson">Get JSON data from SpringMVC</a>
 	<br><br>
-	<input type="button" id="btn_ajax" value="test Ajax">
+	<input type="button" id="btn_ajax" value="Get JSON data from SpringMVC. Show them in table using AJAX">
 	<br><br><br>
 </div>
 </body>
