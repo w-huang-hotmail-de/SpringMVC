@@ -37,8 +37,7 @@ public class Adress {
 
 	@Override
 	public String toString() {
-		if(this == null) return "xxx";
-		else return "[province=" + province + ", city=" + city + ", country=" + country + "]";
+		return "[province=" + province + ", city=" + city + ", country=" + country + "]";
 	}
 	
 }

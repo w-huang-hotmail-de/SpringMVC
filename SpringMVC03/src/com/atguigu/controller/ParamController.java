@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.atguigu.bean.Adress;
 import com.atguigu.bean.User;
 
 
@@ -46,8 +45,7 @@ public class ParamController {
 	}
 	
 	@RequestMapping(value="getParamViaPOJO", method=RequestMethod.POST)
-	public String getParamViaPOJO(User user, Adress address) {
-		user.setAdress(address);
+	public String getParamViaPOJO(User user) {	
 		System.out.println(user);
 		return "success";	//return view name to the ViewResolver
 	}

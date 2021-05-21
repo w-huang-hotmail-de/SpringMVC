@@ -33,12 +33,12 @@
 
 <br><br>
 <a href="TestController/test?age=10&name=Michael">
-测试2.C  href="<c:out value="${myString}" escapeXml="true"></c:out>"
+测试2.C  href="<c:out value="${myString}" escapeXml="true"></c:out>"		<!-- myString cannot be catched because it is not attribute in requestScope or in other scopes -->
 </a>
 
 <br><br>
 <a href="TestController/test?age=10&name=Michael">
-测试2.D  href="${fn:escapeXml(myString) }"
+测试2.D  href="${fn:escapeXml(myString) }"	<!-- myString cannot be catched because it is not attribute in requestScope or in other scopes -->
 </a>
 
 <br><br>

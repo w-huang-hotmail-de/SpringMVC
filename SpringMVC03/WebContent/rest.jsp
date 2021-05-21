@@ -12,20 +12,22 @@
 <!-- The following code is necessary, otherweise JQuery (Ajax) dose not work. -->
 <!-- But here it result in the Warning "No mapping for GET /SpringMVC03/js/jquery-1.11.3-min.js", because it is handled as normal GET Request and try to find 
 	 the mapping method in controller, of cause no mapping method can be found. 
-	 How to solve this problem I don't know yet. The teacher said we will deal with it later.-->
+	 How to solve this problem I don't know yet. The teacher said we will deal with it later. See springmvc + static resource. -->
 <script type="text/javascript" src="js/jquery-1.11.3-min.js"></script>	
+
 <!-- I try with jsp:include to load jquery-1.11.3-min.js as static resource. That does not work. -->
 <%-- <jsp:include page="js/jquery-1.11.3-min.js"></jsp:include> --%>
+
 
 <script type="text/javascript">	//java script can be written anywhere in the file
 	function test(){
 		$.ajax({
-			url: "RESTController/testAjax_DELETE",	//URI
-			type: "DELETE",		//requests method
-			contentType: "application/json",
-			data: {"id":1001},	//send this string to server, it canbe also {id:1001} "id=1001"
-			datatype: "json",	//This is expected datatype of the data returned from server. Ajax receive the data always in expected datatype json, no matter what the server has sent. 
-			success: function(obj) {	//obj is the data returned from server
+			url:"RESTController/testAjax_DELETE",	//URI
+			type:"DELETE",							//requests method
+			contentType:"application/json",
+			data:{"id":1001},						//send this string to server, it canbe also {id:1001} "id=1001"
+			datatype:"json",						//This is expected datatype of the data returned from server. Ajax receive the data always in expected datatype json, no matter what the server has sent. 
+			success:function(obj) {					//obj is the data returned from server
 				alert(obj);
 			}
 		});

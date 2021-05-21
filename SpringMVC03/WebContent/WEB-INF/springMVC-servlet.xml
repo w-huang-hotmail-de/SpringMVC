@@ -17,7 +17,7 @@
 		<property name="suffix" value=".jsp"></property>	<!-- The suffix cannot be here set as ".html", otherweise can cause error 404. -->
 	</bean>
 	
-	<mvc:default-servlet-handler/>
-	<mvc:annotation-driven/>
+<!-- 	<mvc:default-servlet-handler/> -->
+<!-- 	<mvc:annotation-driven/> -->
 
 </beans>
