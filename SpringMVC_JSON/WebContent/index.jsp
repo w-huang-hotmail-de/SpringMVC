@@ -18,7 +18,7 @@
 						{
 							url:"testJsonController/testJson",
 							type:"POST",
-							data: {running:"every day"},
+							data: {key:"value"},
 							dataType:"json",	//expected datatype being sent back from server; also datatype receiving data no matter what is sent back from server
 							success:function(resp){
 								/* show received json in a table using for-in */
@@ -48,7 +48,7 @@
 <div class="center">
 	<a href="testJsonController/testJson">Get JSON data from SpringMVC</a>
 	<br><br>
-	<input type="button" id="btn_ajax" value="Get JSON data from SpringMVC. Show them in table using AJAX">
+	<input type="button" id="btn_ajax" value="Get JSON data from SpringMVC. Show them in a table using AJAX">
 	<br><br><br>
 </div>
 </body>

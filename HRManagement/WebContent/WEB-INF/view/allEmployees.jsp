@@ -14,7 +14,7 @@
 		$(".del").click(	<%-- define the behavior once the tag with class "del" is being clicked --%>
 			function(){
 				if(confirm("Are you sure to delete the employee?")){
-					$("form").attr("action", $(this).attr("href")).submit();	<%-- Bind the tag "this" with a <from> tag to reach two requirements of DispatcherServelet: POST-request method and attribute _method=DELETE. Tansfer the value of attribute "href" of "this" to the atrribute "action" of <form> tag and then submit this request. --%>
+					$("form").attr("action", $(this).attr("href")).submit();	<%-- Bind the tag "this" with a <from> tag to reach two requirements of HiddenHttpMethodeFilter: POST-request method and attribute _method=DELETE. Tansfer the value of attribute "href" of "this" to the atrribute "action" of <form> tag and then submit this request. --%>
 					return false;	<%-- ignore the default behavior of "this" --%>
 				}
 				return false;
@@ -47,7 +47,10 @@
 				<td>${emp.department.departName}</td>
 				<td>
 					<a href="emp/${emp.id}">Update</a>
-					<a class="del" href="emp/${emp.id}">Delete</a>	
+					
+					<!-- href is by default with Http-Request GET, so the following request is not processed with HiddenHttpMethodFilter, and the real request method DELETE cannot be determined. -->
+					<!-- To determine the methode DELETE, we define a click-function for this href-link to submit a form that has request methode POST, parameter _method=DELETE, and action-value as href-value.  -->
+					<a class="del" href="emp/${emp.id}">Delete</a>		
 				</td>
 			</tr>
 		</c:forEach>

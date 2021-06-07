@@ -19,13 +19,13 @@ public class TestJsonController {
 	
 	/**
 	 * Transform a POJO to JSON data and send it back to client.
-	 * @param running - the variable having the same name as the parameter sent by client 
+	 * @param key - the variable having the same name as the parameter sent by client 
 	 * @return collection of employees as response body
 	 */
 	@RequestMapping(value="testJson")
 	@ResponseBody	//set the return value as response body, not viewname any more
-	public Collection<Employee> testJson(String running) {	//receive data from client
-		System.out.println("running: " + running);
+	public Collection<Employee> testJson(String key) {	//receive data from client
+		System.out.println("key:" + key);
 		Collection<Employee> emps = empDao.getAll();
 		return emps;	//two requirements for automatic transformation from POJO to JSON: jackson's jar files, activate springmvc annotation driver using <mvc:annotation-driven/>  
 	}

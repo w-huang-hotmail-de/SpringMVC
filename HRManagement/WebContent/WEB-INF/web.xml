@@ -38,7 +38,7 @@ id="WebApp_ID" version="2.5">
 
 
 <!-- This filter determines the correct request method base on the value of request parameter named "_method" 
-	 All the request must be processed by this filter. -->
+	 Only the request with HTTP-Methode POST will be and must be processed by this filter. -->
 <filter>
 	<filter-name>hiddenHttpMethodFilter</filter-name>
 	<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
